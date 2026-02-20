@@ -1,0 +1,36 @@
+/* Başlık Stili */
+.premium-title {
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -5px;
+    text-align: center;
+    cursor: default;
+    
+    /* Saf Beyazdan Mora Geçişli Gradient */
+    background: linear-gradient(135deg, #ffffff 30%, #a855f7 60%, #7d2ae8 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Ana Parlama (Glow) */
+    filter: drop-shadow(0 0 15px rgba(125, 42, 232, 0.2));
+    
+    /* Işık Akışı Animasyonu */
+    animation: textFlow 5s ease infinite alternate;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Mouse ile üzerine gelince (Hover) */
+.premium-title:hover {
+    /* Yazının arkasındaki mor ışık patlaması */
+    filter: drop-shadow(0 0 35px rgba(188, 19, 254, 0.7));
+    transform: scale(1.02); /* Çok hafif büyüme */
+    letter-spacing: -3px;   /* Harfler hafifçe açılır, premium bir detaydır */
+}
+
+/* Renklerin Akış Animasyonu */
+@keyframes textFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
